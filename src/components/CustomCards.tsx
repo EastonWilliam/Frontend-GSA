@@ -114,4 +114,4 @@ export const GradingCard = ({ title, description, img, sx = {}, ...props }: Grad
         </Card>
     )
 }
-export const TrackingCard = ({})
+export const TrackingCard = ({ label })
