@@ -31,6 +31,9 @@ interface GradingCardProps {
 
 interface TrackingCard {
     title: string
+    PriceInput: ReactElement[]
+    subtitle: string
+    description: string
 }
 
 export const NewsCard = ({ title, date, img, sx = {}, ...props }: NewsCardProps) => {
