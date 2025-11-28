@@ -29,10 +29,8 @@ interface GradingCardProps {
     sx?: SxProps
 }
 
-interface TrackingCardProps {
+interface TrackingCard {
     title: string
-    
-    
 }
 
 export const NewsCard = ({ title, date, img, sx = {}, ...props }: NewsCardProps) => {
