@@ -29,7 +29,7 @@ export default function Header() {
       <AppBar position='static'>
         <Container>
           <Toolbar>
-            <LogoButton />
+            <LogoButton  img={} width={'100'} height={}/>
             <Link to={'#'} ></Link>
             <Menu
               anchorEl={anchorE1}
