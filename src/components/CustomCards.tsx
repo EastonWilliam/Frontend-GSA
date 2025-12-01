@@ -29,11 +29,19 @@ interface GradingCardProps {
     sx?: SxProps
 }
 
-interface TrackingCard {
+interface TrackingCardProps {
     title: string
     PriceInput: ReactElement[]
     subtitle: string
     description: string
+    sx?: SxProps
+}
+
+interface TrackingBlogProps {
+    title: string
+    img: string
+    description: string
+    sx?: SxProps
 }
 
 export const NewsCard = ({ title, date, img, sx = {}, ...props }: NewsCardProps) => {
@@ -120,4 +128,41 @@ export const GradingCard = ({ title, description, img, sx = {}, ...props }: Grad
         </Card>
     )
 }
-export const TrackingCard = ({})
+
+export const TrackingCard = ({ title, description, subtitle, PriceInput, sx = {}, ...props }: TrackingCardProps) => {
+    return (
+        <Card sx={{ ...sx }} {...props}>
+            <CardActionArea>
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {title}
+                    </Typography>
+                    <Box>
+                        {PriceInput.map((item) => {
+                            return (item)
+                        })}
+                    </Box>
+                    <Button>{subtitle}</Button>
+                    <Typography>{description}</Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
+    )
+}
+
+export const TrackingBlog = ({ title, img, description, sx = {}, ...props }: TrackingBlogProps) => {
+    return (
+        <Box display={'flex'} flexDirection={'column'} >
+            <Box component={'img'} src={img} sx={{ mt: '-100px' }}></Box>
+            <Box sx={{ ...sx }} {...props}>
+                <Typography>
+                    {title}
+                </Typography>
+                <Typography>
+                    {description}
+                </Typography>
+            </Box>
+        </Box>
+
+    )
+}
