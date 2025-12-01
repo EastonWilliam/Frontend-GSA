@@ -11,6 +11,12 @@ interface InputButtonProps {
   sx?: SxProps
 }
 
+interface LogoButtonProps {
+  img: string,
+  width: string | number,
+  height: string | number
+}
+
 export const InputButton = ({ price, label, prefix, sx = {}, ...props }: InputButtonProps) => {
   const [budget, setBudget] = useState(price);
   const update = () => {
@@ -31,7 +37,12 @@ export const InputButton = ({ price, label, prefix, sx = {}, ...props }: InputBu
       <Typography>{label}</Typography>
     </Stack>
   )
-
 }
 
-
+export const LogoButton = ({ img, width, height }: LogoButtonProps) => {
+  return (
+    <Box width={width} height={height}>
+      <img src={img}></img>
+    </Box>
+  )
+}
